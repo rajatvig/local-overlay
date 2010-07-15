@@ -2,7 +2,7 @@
 <layman>
   <overlay
       type= "git"
-      src= "git://github.com/rajatvig/local-overlay"
+      src= "git://github.com/rajatvig/local-overlay.git"
       contact= "xmpp:rajat.vig@gmail.com"
       name= "rajatvig">
     <link>http://www.github.com/rajatvig/local-overlay</link>
