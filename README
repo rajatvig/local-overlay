@@ -1,1 +1,5 @@
 This is an overlay I use for my Gentoo Boxes (both x86 and x86_64).
+
+To add it use
+
+layman -o http://github.com/rajatvig/local-overlay/raw/master/Documentation/layman/rajatvig.xml -f -k -a rajatvig
