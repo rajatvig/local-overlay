@@ -3,9 +3,9 @@
   <overlay
       type= "git"
       src= "git://github.com/rajatvig/local-overlay.git"
-      contact= "xmpp:rajat.vig@gmail.com"
+      contact= "rajat.vig@gmail.com"
       name= "rajatvig">
-    <link>http://www.github.com/rajatvig/local-overlay</link>
+    <link>http://github.com/rajatvig/local-overlay</link>
     <description>Rajat Vig's Overlay</description>
   </overlay>
 </layman>
