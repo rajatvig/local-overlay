@@ -1,8 +1,9 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/miro/miro-2.5.4.ebuild,v 1.1 2010/03/05 19:24:41 volkmar Exp $
+# $Header: $
 
 EAPI="2"
+PYTHON_DEPEND="2:2.5"
 
 inherit eutils fdo-mime gnome2-utils python distutils
 
@@ -13,47 +14,40 @@ SRC_URI="http://ftp.osuosl.org/pub/pculture.org/${PN}/src/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
-IUSE="libnotify"
+IUSE="libnotify aac xvid"
 
 CDEPEND="
-	dev-libs/boost[python]
 	dev-libs/glib:2
-	dev-python/pygobject:2
+	dev-libs/boost[python]
+	>=dev-python/pyrex-0.9.6.4
 	dev-python/pygtk:2
-	dev-python/pywebkitgtk
-	>=net-libs/rb_libtorrent-0.14.1[python]
-	x11-libs/gtk+:2
-	x11-libs/libX11"
+	dev-python/pygobject:2"
+
 RDEPEND="${CDEPEND}
-	dev-python/gst-python:0.10
-	media-plugins/gst-plugins-pango
 	libnotify? ( dev-python/notify-python )
 	|| ( dev-lang/python[sqlite] dev-python/pysqlite:2 )
 	dev-python/dbus-python
+	dev-python/pycairo
 	dev-python/gconf-python
-	dev-python/pycairo"
-DEPEND="${CDEPEND}
-	>=dev-python/pyrex-0.9.6.4
-	dev-util/pkgconfig"
+	dev-python/gst-python:0.10
+	>=dev-python/pywebkitgtk-1.1.5
+
+	>=net-libs/rb_libtorrent-0.14.1[python]
+
+	>=media-libs/gstreamer-0.10.22 
+	>=media-libs/gst-plugins-base-0.10.22
+	media-libs/gst-plugins-good:0.10 
+	media-plugins/gst-plugins-meta:0.10
+	aac? ( media-plugins/gst-plugins-faad:0.10 )
+	xvid? ( media-plugins/gst-plugins-xvid:0.10 )"
+
+DEPEND="${CDEPEND}"
 
 S="${WORKDIR}/${P}/platform/gtk-x11"
 
-# NOTES:
-# it's probably not working with python-3
-# used xulrunner has to be the same as the one used for gtkmozembed-python
-# psyco can make miro speedier, add a USE flag, recommand in postinst ?
-
-# TODO:
-# create a real test suite, upstream bug 12369
-# try to have a real xine/gstreamer choice, upstream bug 12371
-
 src_prepare() {
 	# fix debug mode
-	epatch "${FILESDIR}"/${PN}-3.0.2-fix-debug.patch
-	# prevent installing unneeded test files
-	epatch "${FILESDIR}"/${PN}-2.5.3-dont-install-test-files.patch # upstream bug 12370
-	# do not show --unittest option
-	epatch "${FILESDIR}"/${PN}-2.5.3-remove-unittest-option.patch # upstream bug 12370
+	epatch "${FILESDIR}/${PN}-3.0.2-fix-debug.patch"
 
 	# disable autoupdate
 	sed -i -e "/autoupdate/d" ../../portable/startup.py || die "sed failed"
@@ -64,13 +58,6 @@ src_prepare() {
 			../../portable/frontends/widgets/gtk/trayicon.py \
 			plat/frontends/widgets/application.py || die "sed failed"
 	fi
-}
-
-src_test() {
-	# there is a test suite but it has been designed to be used when installed
-	# should be fixed
-	#./run.sh --unittests || die "tests failed"
-	:
 }
 
 src_install() {
@@ -94,8 +81,13 @@ pkg_postinst() {
 	fdo-mime_mime_database_update
 	gnome2_icon_cache_update
 
-	elog "If you can't see a video or can't heard an audio,"
-	elog "install required gstreamer plugins"
+	ewarn
+	ewarn "If miro doesn't play some video or audio format, please"
+	ewarn "check your USE flags on media-plugins/gst-plugins-meta"
+	ewarn
+	elog "Miro for Linux doesn't support Adobe Flash, therefore you"
+	elog "you will not see any embedded video player on MiroGuide."
+	elog
 }
 
 pkg_postrm() {
