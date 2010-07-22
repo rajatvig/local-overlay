@@ -21,7 +21,7 @@ SRC_URI="
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~x86 ~amd64"
 IUSE="+suid +plugins-symlink"
 
 LANGS="am ar bg bn ca cs da de el en_GB en_US es_419 es et fil fi fr gu he hi hr
@@ -43,8 +43,8 @@ RDEPEND="app-misc/ca-certificates
 	dev-libs/dbus-glib
 	dev-libs/expat
 	dev-libs/glib:2
-    >=dev-libs/nspr-4.7
-    >=dev-libs/nss-3.12.3
+	>=dev-libs/nspr-4.7
+	>=dev-libs/nss-3.12.3
 	gnome-base/gconf:2
 	|| (
 		media-fonts/liberation-fonts
@@ -129,9 +129,9 @@ src_install() {
 }
 
 pkg_postinst() {
-    elog "This Chrome binary package is from the developer preview channel.  It is"
-    elog "not guaranteed to be stable or even usable."
-    elog ""
+	elog "This Chrome binary package is from the developer preview channel.  It is"
+	elog "not guaranteed to be stable or even usable."
+	elog ""
 	elog "Chrome's auto-update mechanism has been disabled."
 	elog "It is only available for Debian and RPM based distributions."
 	elog ""
