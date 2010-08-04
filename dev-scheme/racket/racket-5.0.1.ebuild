@@ -9,8 +9,7 @@ DESCRIPTION="Programming environment based on Scheme."
 HOMEPAGE="http://www.racket-lang.org"
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~x86"
-#KEYWORDS="~amd64"
+KEYWORDS="~x86 ~amd64"
 IUSE="-backtrace cairo cgc doc opengl profile X slatex sgc -futures -places +foreign static -plain"
 # jit
 RDEPEND="X? ( x11-libs/libX11
