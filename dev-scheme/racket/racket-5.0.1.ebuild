@@ -62,9 +62,9 @@ src_prepare() {
 	pushd ..
 	epatch "${FILESDIR}/${P}-hack_makefile_in_temp${MY_PNUM}.patch"
 	epatch "${FILESDIR}/${P}-libpng14.patch"
-	epatch "${FILESDIR}/${P}-fix-noplaces-sighand.patch"
-	epatch "${FILESDIR}/${P}-rename-gc.patch"
-	epatch "${FILESDIR}/${P}-thread-gc-backtrace.patch"
+	#epatch "${FILESDIR}/${P}-fix-noplaces-sighand.patch"
+	#epatch "${FILESDIR}/${P}-rename-gc.patch"
+	#epatch "${FILESDIR}/${P}-thread-gc-backtrace.patch"
 	popd
 	#sed -i -e 's/#! \/bin\/sh/#! \/bin\/sh -x/g' ../configure \
 	#|| die "sed failed"
