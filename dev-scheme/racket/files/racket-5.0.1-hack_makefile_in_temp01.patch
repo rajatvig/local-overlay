@@ -1,0 +1,37 @@
+diff -u -r a/Makefile.in b/Makefile.in
+--- a/Makefile.in	2010-03-17 20:22:06.000000000 +0200
++++ b/Makefile.in	2010-04-18 22:23:49.000000000 +0300
+@@ -60,9 +60,6 @@
+ 	$(MAKE) install-@MAIN_VARIANT@
+ 
+ plain-install:
+-	if [ "$(DESTDIR)" != "" ]; then \
+-          echo "cannot use plain-install with DESTDIR=$(DESTDIR)"; exit 1; \
+-        fi
+ 	$(MAKE) plain-install-@MAIN_VARIANT@
+ 
+ install-common-first:
+diff -u -r a/gracket/Makefile.in b/gracket/Makefile.in
+--- a/gracket/Makefile.in	2010-03-17 20:22:01.000000000 +0200
++++ b/gracket/Makefile.in	2010-04-19 14:50:10.000000000 +0300
+@@ -280,8 +280,6 @@
+ 	$(MAKE) install-@WXVARIANT@-post-collects
+ 
+ install-common:
+-	cd ..; rm -f "$(DESTDIR)$(bindir)/gracket@CGC_INSTALLED@"
+-	cd ..; rm -f "$(DESTDIR)$(bindir)/gracket@MMM_INSTALLED@"
+ 	cd ..; echo 'CXX=@CXX@' >> $(BUILDINFO)
+ 	cd ..; echo 'CXXFLAGS=@CXXFLAGS@ @PREFLAGS@ @COMPFLAGS@' >> $(BUILDINFO)
+ 	cd ..; echo 'MROPTIONS=@MROPTIONS@' >> $(BUILDINFO)
+diff -u -r a/racket/Makefile.in b/racket/Makefile.in
+--- a/racket/Makefile.in	2010-03-17 20:22:06.000000000 +0200
++++ b/racket/Makefile.in	2010-04-19 14:49:49.000000000 +0300
+@@ -277,8 +277,6 @@
+ # have to go up and install things from there.
+ 
+ unix-install:	
+-	cd ..; rm -f "$(DESTDIR)$(bindir)/racket@CGC_INSTALLED@"
+-	cd ..; rm -f "$(DESTDIR)$(bindir)/racket@MMM_INSTALLED@"
+ 	cd ..; cp racket/starter "$(DESTDIR)$(libpltdir)/starter"
+ 	cd ..; $(STRIP_DEBUG) "$(DESTDIR)$(libpltdir)/starter"
+ 	cd ..; echo 'CC=@CC@' > "$(BUILDINFO)"
