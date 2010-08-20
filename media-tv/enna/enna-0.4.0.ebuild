@@ -63,6 +63,7 @@ src_configure() {
 		$(use_enable video activity-video ) \
 		$(use_enable weather activity-weather ) \
 		--disable-activity-tv \
+		--disable-ecore-txt \
 		--disable-libsvdrp \
 		--enable-browser-localfiles \
 		--enable-browser-valhalla \
