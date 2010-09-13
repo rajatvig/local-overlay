@@ -21,7 +21,7 @@ SRC_URI="
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE="+suid +plugins-symlink"
 
 LANGS="am ar bg bn ca cs da de el en_GB en_US es_419 es et fil fi fr gu he hi hr
