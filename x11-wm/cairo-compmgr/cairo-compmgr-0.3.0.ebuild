@@ -17,7 +17,7 @@ IUSE=""
 
 RDEPEND="x11-libs/gtk+:2
 	x11-libs/cairo
-	>=dev-lang/vala-0.7.10
+	dev-lang/vala
 	x11-libs/pixman"
 DEPEND="${RDEPEND}
 	>=x11-proto/glproto-1.4.9"
