@@ -33,9 +33,7 @@ RDEPEND="${CDEPEND}
 	dev-python/pycurl 
 	dev-python/gconf-python
 	dev-python/gst-python:0.10
-
-	=net-libs/rb_libtorrent-0.14*[python]
-
+	net-libs/rb_libtorrent[python]
 	media-plugins/gst-plugins-meta:0.10[theora?,vorbis?]
 	=media-plugins/gst-plugins-pango-0.10*
 	faad? ( =media-plugins/gst-plugins-faad-0.10* )
