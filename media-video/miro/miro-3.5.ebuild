@@ -42,7 +42,7 @@ RDEPEND="${CDEPEND}
 	x264? ( =media-plugins/gst-plugins-x264-0.10* )
 	xvid? ( =media-plugins/gst-plugins-xvid-0.10* )
 	
-	ffmpeg? ( media-video/ffmpeg[faac?,faad?,mp3?,theora?,vorbis?,x264?,xvid?] )
+	ffmpeg? ( media-video/ffmpeg[faac?,mp3?,theora?,vorbis?,x264?,xvid?] )
 	theora? ( media-video/ffmpeg2theora )"
 
 DEPEND="${CDEPEND}"
