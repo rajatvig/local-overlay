@@ -11,6 +11,8 @@ inherit eutils toolchain-funcs versionator
 CHAN="unstable"
 MY_P="${PN}-${CHAN}_${PVR}"
 
+KEYWORDS=""
+
 DESCRIPTION="A browser that combines a minimal design with sophisticated technology (binary only)"
 HOMEPAGE="http://www.google.com/chrome"
 
@@ -21,7 +23,6 @@ SRC_URI="
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
 IUSE="+suid +plugins-symlink"
 
 LANGS="am ar bg bn ca cs da de el en_GB en_US es_419 es et fil fi fr gu he hi hr
@@ -112,7 +113,7 @@ src_install() {
 	rm "${D}${CHROME_HOME}/${PN}.desktop"
 
 	# Copy icon into system-wide location
-	newicon "${D}${CHROME_HOME}/product_logo_256.png" "${PN/-bin/}.png" || die "newicon failed"
+	newicon "${D}${CHROME_HOME}/product_logo_256.png" "${PN}.png" || die "newicon failed"
 
 	# Plugins symlink, optional wrt bug #301911
 	if use plugins-symlink; then
