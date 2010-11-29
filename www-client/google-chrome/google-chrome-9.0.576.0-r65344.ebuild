@@ -11,7 +11,7 @@ inherit eutils toolchain-funcs versionator
 CHAN="unstable"
 MY_P="${PN}-${CHAN}_${PVR}"
 
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 
 DESCRIPTION="A browser that combines a minimal design with sophisticated technology (binary only)"
 HOMEPAGE="http://www.google.com/chrome"
