@@ -44,8 +44,6 @@ pkg_setup() {
 }
 
 src_prepare(){
-	epatch "${FILESDIR}/${PN}-6-swt.patch"
-
 	rm -rf tools/lib/x86*
 }
 
