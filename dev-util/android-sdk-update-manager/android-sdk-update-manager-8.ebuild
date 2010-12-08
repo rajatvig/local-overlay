@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-util/android-sdk-update-manager/android-sdk-update-manager-6-r2.ebuild,v 1.3 2010/10/15 17:46:23 fauli Exp $
 
-EAPI="2"
+EAPI="3"
 
 inherit eutils
 
@@ -53,12 +53,8 @@ src_install(){
 	dodoc tools/NOTICE.txt "SDK Readme.txt" || die
 	rm -f tools/NOTICE.txt "SDK Readme.txt"
 
-	insinto "${ANDROID_SDK_DIR}/tools"
-	doins -r tools/lib || die "failed to doins tools/lib"
-	rm -rf tools/lib || die
-
-	exeinto "${ANDROID_SDK_DIR}/tools"
-	doexe tools/* || die "failed to doexe tools/"
+	dodir "${ANDROID_SDK_DIR}/tools"
+	cp -pPR tools/* "${ED}${ANDROID_SDK_DIR}/tools" || die "failed to install tools"
 
 	# Maybe this is needed for the tools directory too.
 	#keepdir "${ANDROID_SDK_DIR}"/{add-ons,docs,platforms,temp} || die "failed to keepdir"
