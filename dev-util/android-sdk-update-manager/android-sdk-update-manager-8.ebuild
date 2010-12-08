@@ -67,7 +67,7 @@ src_install(){
 	fowners root:android "${ANDROID_SDK_DIR}"/{,add-ons,docs,platforms,temp} || die
 	fperms 0775 "${ANDROID_SDK_DIR}"/{,add-ons,docs,platforms,temp} || die
 
-	echo "PATH=\"${ANDROID_SDK_DIR}/tools\"" > "${T}/80${PN}" || die
+	echo "PATH=\"${ANDROID_SDK_DIR}/tools:${ANDROID_SDK_DIR}/platform-tools\"" > "${T}/80${PN}" || die
 	doenvd "${T}/80${PN}" || die
 }
 
