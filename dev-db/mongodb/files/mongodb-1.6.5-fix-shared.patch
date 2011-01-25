@@ -1,0 +1,20 @@
+diff --git a/SConstruct b/SConstruct
+index 5d667f4..f9d853e 100644
+--- a/SConstruct
++++ b/SConstruct
+@@ -753,6 +753,7 @@ if nix:
+ 
+     if linux and GetOption( "sharedclient" ):
+         env.Append( LINKFLAGS=" -Wl,--as-needed -Wl,-zdefs " )
++        env.Append( SHLINKFLAGS=" -Wl,-soname=libmongoclient.so.1" )
+ 
+     if debugBuild:
+         env.Append( CPPFLAGS=" -O0 -fstack-protector " );
+@@ -1539,7 +1540,6 @@ if installSetup.clientSrc:
+ 
+ #lib
+ if installSetup.libraries:
+-    env.Install( installDir + "/" + nixLibPrefix, clientLibName )
+     if GetOption( "sharedclient" ): 
+         env.Install( installDir + "/" + nixLibPrefix, sharedClientLibName )
+ 
