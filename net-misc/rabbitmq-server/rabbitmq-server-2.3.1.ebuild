@@ -35,7 +35,7 @@ src_compile() {
 
 src_install() {
 	# erlang module
-	local targetdir="/usr/$(get_libdir)/erlang/lib/${P}"
+	local targetdir="/usr/$(get_libdir)/erlang/lib/rabbitmq_server-${PV}"
 
 	einfo "Setting correct RABBITMQ_HOME in scripts"
 	sed -e "s:^RABBITMQ_HOME=.*:RABBITMQ_HOME=\"${targetdir}\":g" \
