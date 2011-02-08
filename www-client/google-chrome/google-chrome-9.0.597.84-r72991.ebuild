@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -8,15 +8,15 @@ inherit eutils toolchain-funcs versionator
 # Latest revision can be found at
 # wget -qO- http://dl.google.com/linux/deb/dists/stable/main/binary-amd64/Packages|grep Filename
 
-CHAN="unstable"
+CHAN="stable"
 MY_P="${PN}-${CHAN}_${PVR}"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="x86 amd64"
 
 DESCRIPTION="A browser that combines a minimal design with sophisticated technology (binary only)"
 HOMEPAGE="http://www.google.com/chrome"
 
-SRC_BASE="http://dl.google.com/linux/deb/pool/main/${PN:0:1}/${PN}-${CHAN}/"
+SRC_BASE="http://dl.google.com/linux/chrome/deb/pool/main/${PN:0:1}/${PN}-${CHAN}/"
 SRC_URI="
 	x86? ( ${SRC_BASE}${MY_P}_i386.deb )
 	amd64? ( ${SRC_BASE}${MY_P}_amd64.deb )"
