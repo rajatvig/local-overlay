@@ -46,7 +46,7 @@ src_install() {
 	doins -r ebin include
 
 	einfo "Installing server scripts to /usr/sbin"
-	for script in rabbitmq-env rabbitmq-server rabbitmqctl rabbitmq-multi; do
+	for script in rabbitmq-env rabbitmq-server rabbitmqctl; do
 		exeinto /usr/libexec/rabbitmq
 		doexe scripts/${script}
 		newsbin "${FILESDIR}"/rabbitmq-script-wrapper ${script}

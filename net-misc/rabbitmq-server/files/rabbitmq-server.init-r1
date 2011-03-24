@@ -12,12 +12,12 @@ depend() {
 
 start() {
 	ebegin "Starting RabbitMQ..."
-	/usr/sbin/rabbitmq-multi start_all ${NODE_COUNT:-1} >> /var/log/rabbitmq/startup.log 2>> /var/log/rabbitmq/startup.err
+	/usr/sbin/rabbitmq-server -detached  ${NODE_COUNT:-1} >> /var/log/rabbitmq/startup.log 2>> /var/log/rabbitmq/startup.err
 	eend $?
 }
 
 stop() {
 	ebegin "Stopping RabbitMQ..."
-	/usr/sbin/rabbitmq-multi stop_all >> /var/log/rabbitmq/shutdown.log 2>> /var/log/rabbitmq/shutdown.err
+	/usr/sbin/rabbitmqctl stop >> /var/log/rabbitmq/shutdown.log 2>> /var/log/rabbitmq/shutdown.err
 	eend $?
 }
