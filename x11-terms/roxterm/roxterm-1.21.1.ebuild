@@ -23,7 +23,6 @@ DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.20"
 
 src_prepare() {
-	epatch "${FILESDIR}/${P}-docdir.patch"
 	eautoreconf
 }
 
