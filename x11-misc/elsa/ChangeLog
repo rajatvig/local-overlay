@@ -1,0 +1,9 @@
+# ChangeLog for x11-misc/elsa
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*elsa-9999 (15 Jul 2010)
+
+  15 Jul 2010; evadim <evadim@evadim.ru> +elsa-9999.ebuild, +metadata.xml:
+  initial import
+

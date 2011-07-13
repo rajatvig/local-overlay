@@ -1,0 +1,16 @@
+# ChangeLog for media-libs/elementary
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  29 Jan 2011; evadim <evadim@evadim.ru> elementary-9999.ebuild:
+  moved from TMP to /
+
+  04 Mar 2010; evadim <evadim@evadim.ru> elementary-9999.ebuild:
+  sync to e.org version
+
+  26 Feb 2010; evadim <evadim@evadim.ru> elementary-9999.ebuild:
+  sync to e.org version
+
+  16 Jan 2010; evadim <evadim@evadim.ru> elementary-9999.ebuild:
+  fix deps
+
