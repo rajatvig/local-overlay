@@ -26,7 +26,7 @@ RDEPEND="
 	"
 DEPEND="${RDEPEND}"
 
-src_configure() {
+src_compile() {
 	export MY_ECONF="
 	  ${MY_ECONF}
 	  $(use_enable dbus edbus)
@@ -37,5 +37,5 @@ src_configure() {
 	  $(use_enable X ecore-x)
 	  $(use_enable thumbnails ethumb)
 	"
-	efl_src_configure
+	enlightenment_src_compile
 }
