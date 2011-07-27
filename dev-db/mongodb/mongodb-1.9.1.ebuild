@@ -41,10 +41,6 @@ pkg_setup() {
 	fi
 }
 
-src_prepare() {
-	epatch "${FILESDIR}/${PN}-1.9-fix-scons.patch"
-}
-
 src_compile() {
 	escons ${scons_opts} all
 }
