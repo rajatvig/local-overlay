@@ -42,7 +42,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-1.8-fix-scons.patch"
 	epatch "${FILESDIR}/${PN}-linux3.patch"
 }
 
