@@ -28,5 +28,5 @@ src_prepare() {
 }
 
 src_install() {
-	distutils_src_install
+	distutils_src_install --install-menu-in-user-mode
 }
