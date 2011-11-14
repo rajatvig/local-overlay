@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="3"
-PYTHON_DEPEND="2:2.7"
+PYTHON_DEPEND="2"
 
-inherit distutils eutils
+inherit python
 
 DESCRIPTION="Snakefire is a desktop client for Campfire that can run on Linux, and any other OS that has QT support."
 HOMEPAGE="http://snakefire.org/"
