@@ -7,7 +7,7 @@ SUPPORT_PYTHON_ABIS="1"
 
 inherit bash-completion-r1 distutils eutils
 
-DESCRIPTION="Snakefire - Campfire client in Qt"
+DESCRIPTION="Snakefire is a desktop client for Campfire that can run on Linux, and any other OS that has QT support."
 HOMEPAGE="http://snakefire.org/"
 SRC_URI="http://snakefire.org/downloads/${PN}-${PV}.tar.gz"
 
