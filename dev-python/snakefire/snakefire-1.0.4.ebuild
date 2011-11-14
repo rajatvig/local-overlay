@@ -4,7 +4,7 @@
 EAPI="3"
 PYTHON_DEPEND="2"
 
-inherit python
+inherit python distutils
 
 DESCRIPTION="Snakefire is a desktop client for Campfire that can run on Linux, and any other OS that has QT support."
 HOMEPAGE="http://snakefire.org/"
@@ -21,6 +21,10 @@ DEPEND="${RDEPEND} dev-python/pyenchant dev-python/pyfire dev-python/PyQt4"
 pkg_setup() {
 	python_set_active_version 2
 	python_pkg_setup
+}
+
+src_prepare() {
+	distutils_src_prepare
 }
 
 src_install() {
